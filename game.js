@@ -1,4 +1,4 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js';
+import * as THREE from './three.module.js';
 const $=s=>document.querySelector(s), STORE='block-frontier-v2';
 const types=[['草地','🟩',0x57a63f],['泥土','🟫',0x86532d],['石头','⬜',0x828789],['原木','🪵',0x80502f],['树叶','🍃',0x317d3b],['沙子','🟨',0xd7bd69]];
 const key=(x,y,z)=>`${x}|${y}|${z}`; let blocks=new Map(), meshes=[], selected=0, target, running=false, creative=false, flying=false, third=true, daytime=0.55;
