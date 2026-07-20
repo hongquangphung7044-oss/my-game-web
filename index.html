@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no" />
+  <meta name="theme-color" content="#63b8ea" />
+  <title>方块世界 · My Game</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game"></canvas>
+    <div id="loading">正在生成方块世界…</div>
+
+    <div id="hud" class="hidden">
+      <div id="topbar">
+        <span id="status">☀ 第 1 天</span>
+        <span id="coords">X 0 · Y 0 · Z 0</span>
+        <button id="menu-btn" aria-label="菜单">☰</button>
+      </div>
+      <div id="crosshair" aria-hidden="true">+</div>
+      <div id="tip">左侧移动 · 右侧拖动视角 · 对准方块后挖掘或放置</div>
+
+      <div id="mobile-controls">
+        <div id="joystick-zone" aria-label="移动摇杆"><div id="joystick-knob"></div></div>
+        <div id="look-zone" aria-label="视角控制"></div>
+        <div id="action-buttons">
+          <button id="jump-btn" class="round">↑<small>跳跃</small></button>
+          <button id="break-btn" class="round danger">⛏<small>挖掘</small></button>
+          <button id="place-btn" class="round success">▣<small>放置</small></button>
+        </div>
+      </div>
+
+      <div id="hotbar" aria-label="方块栏"></div>
+    </div>
+
+    <section id="start-screen" class="panel">
+      <h1>方块世界</h1>
+      <p>一个为手机横屏设计的网页体素沙盒。</p>
+      <ul>
+        <li><b>移动端：</b>横屏游玩；左摇杆移动，右侧拖动视角。</li>
+        <li><b>操作：</b>⛏ 挖掘，▣ 放置，↑ 跳跃；底部选择方块。</li>
+        <li><b>电脑端：</b>WASD 移动，空格跳跃，鼠标看向，左键挖掘、右键放置。</li>
+      </ul>
+      <button id="play-btn" class="primary">进入世界</button>
+      <button id="continue-btn" class="secondary hidden">继续已保存的世界</button>
+      <small>提示：游戏会自动保存至此浏览器的本地存储。</small>
+    </section>
+
+    <section id="menu" class="panel hidden">
+      <h2>游戏菜单</h2>
+      <button id="resume-btn" class="primary">继续游戏</button>
+      <button id="save-btn" class="secondary">立即保存</button>
+      <button id="reset-btn" class="danger wide">重置世界</button>
+      <p class="muted">当前版本为离线单人网页原型；后续可直接封装为 APK。</p>
+    </section>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
